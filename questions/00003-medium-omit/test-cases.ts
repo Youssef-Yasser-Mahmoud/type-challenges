@@ -9,6 +9,12 @@ type cases = [
 // @ts-expect-error
 type error = MyOmit<Todo, 'description' | 'invalid'>
 
+type X = MyOmit<Todo1, 'description' | 'completed'>
+
+declare let x: MyOmit<Todo1, 'description' | 'completed'>
+
+x.title = 'hello'
+
 interface Todo {
   title: string
   description: string
